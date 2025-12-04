@@ -96,6 +96,7 @@ export const DATA = {
       title: "Yaps",
       href: "/projects/yaps",
       dates: "May 2025 - Present",
+      featured: true,
       active: true,
       description:
         "Transforms uploaded lectures/educational media into podcasts with flashcards, using spaced repetition for efficient learning. Gamified review keeps users engaged while reinforcing key concepts.",
@@ -119,18 +120,65 @@ export const DATA = {
       ],
       image: "",
       video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+        "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/yaps_upload_demo.mp4",
+      // Detail page fields
+      tagline:
+        "Transforms uploaded lectures/educational media into podcasts with flashcards, using spaced repetition for efficient learning. Gamified review keeps users engaged while reinforcing key concepts.",
+      demoUrl: "",
+      githubUrl: "https://github.com/billhuynh1/Yaps",
+      problem:
+        "Students spend hours rewatching long lectures to study with only a small portion of the content actually matters. Traditional note-taking is slow, transcripts are hard to digest, and reviewing entire videos for one concept becomes frustrating. I wanted to solve that by turning dense lectures into something fast, memorable, and easy to revisit, like a podcast.\n\n Instead of generating generic flashcards, Yaps embeds both the transcript chapters and flashcard text into vector space and ranks similarity between them, allowing students to review cards that directly relate to the part of the lecture they're hearing.",
+      features: [
+        "Upload Zoom transcripts, MP4, or MP3 files",
+        "Automatic audio/video compression for faster processing",
+        "Built-in transcription when a transcript is not provided",
+        "AI-generated summaries for quick lecture review",
+        "Flashcard creation for spaced-repetition studying",
+        "AI-personalized flashcards matched to chapters using semantic embeddings",
+        "Text-to-speech conversion to create listenable podcast-style summaries",
+        "Dashboard to revisit past uploads, summaries, and generated flashcards",
+        "File hashing to prevent duplicate uploads and redundant processing",
+        "Gamified learning with XP, ranks, and progress tracking to motivate engagement",
+      ],
+      screenshots: [
+        {
+          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/yaps_upload_demo.mp4",
+          caption:
+            "Upload a lecture and Yaps automatically converts it into a clean podcast with chapter-aligned flashcards and AI summaries.",
+          type: "video",
+        },
+        {
+          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/yaps_review_demo.mp4",
+          caption:
+            "Listen chapter by chapter and review flashcards generated specifically for the section you're learning. No more rewatching hour long videos.",
+          type: "video",
+        },
+        {
+          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/yaps_review_demo.mp4",
+          caption: "Review flashcards from the chapter you just listened to!",
+          type: "video",
+        },
+      ],
+      technical:
+        "Built with Next.js, Supabase, and Drizzle ORM. Implemented an end-to-end processing pipeline using ffmpeg for media compression, Whisper for transcription, and GPT for summarization + flashcard creation. Generates embeddings to map chapters to flashcards using cosine similarity. Storage + CDN optimization for hosting long video/audio. Designed for mobile-first UI with responsive layout.",
+      learnings:
+        "This project taught me the importance of cost optimization when working with AI APIs. My initial implementation sent every file directly to OpenAI for transcription, which became expensive quickly. Adding compression and deduplication reduced API costs by 45%.\n\nI learned how to work with vector embeddings and cosine similarity search, understanding that semantic matching requires careful prompt engineering and threshold tuning. Initially, my flashcard-to-chapter mapping was too strict, missing relevant connections. Adjusting the similarity threshold and experimenting with different embedding models significantly improved accuracy.\n\nIf I were to rebuild this, I'd implement a queue system for processing uploads from day one instead of handling everything synchronously. I'd also add more granular error handling for failed transcriptions and implement retry logic with exponential backoff. Additionally, I'd explore using local whisper models for transcription to reduce dependency on external APIs and lower costs further.",
+      results:
+        "Yaps turns full lectures into something a student can learn from in minutes, not hours. Chapters, flashcards, summaries, and TTS audio are generated automatically, so studying feels focused instead of overwhelming. Seeing a raw upload transform into a structured podcast with flashcards matched to each chapter is the moment everything comes together, and that's the experience I built for.",
     },
     {
       title: "TFTdle",
       href: "/projects/tftdle",
       dates: "August 2024 - October 2024",
+      featured: true,
       active: true,
       description:
         "A daily Teamfight Tactics guessing game where users test their knowledge and track guesses. Features an automated pipeline that scrapes data for each patch and resets the backend daily, supporting 100+ daily active users.",
       technologies: [
         "React",
         "Typescript",
+        "Java",
+        "Spring Boot",
         "PostgreSQL",
         "AWS",
         "Docker",
@@ -150,20 +198,76 @@ export const DATA = {
         },
       ],
       image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      video:
+        "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/tftdle_classic_demo.mp4",
+
+      // Detail page fields
+      tagline:
+        "A daily Teamfight Tactics guessing game where users test their knowledge and track guesses. Features an automated pipeline that scrapes data for each patch and resets the backend daily, supporting 100+ daily active users.",
+      demoUrl: "https://tft-dle.com",
+      githubUrl: "https://github.com/billhuynh1/TFTdle",
+      problem:
+        "Teamfight Tactics players love testing their knowledge, but most stat and comp tools only show data, they don’t make it fun. There wasn’t a fun way to challenge TFT knowledge daily, track guesses, or compete with friends. I wanted to build an engaging interactive experience for gamers, not just another wiki site.",
+      features: [
+        "Daily rotating characters puzzle with guessing feedback",
+        "Guesses track traits, origins, costs, items, and set appearances",
+        "Classic Mode: Guess the daily champion",
+        "Real-time feedback on guesses with visual indicators",
+        "Finisher Mode: Guess the Chibi's finisher",
+        "Little Legend Mode: Guess the splash art of the little legend",
+        "Trait Mode: Guess the trait based on the description",
+        "Follow up questions on three of the modes",
+        "Automatic data scraping every patch using Python & BeautifulSoup",
+        "Backend reset scheduler that rolls over the daily champion",
+        "Session storage so players can return and see past guesses",
+        "Dockerized backend + AWS deployment for scalability",
+      ],
+      screenshots: [
+        {
+          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/tftdle_classic_demo.mp4",
+          caption: "Classic mode",
+          type: "video",
+        },
+        {
+          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/tftdle_finisher_demo.mp4",
+          caption: "Finisher mode",
+          type: "video",
+        },
+        {
+          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/tft_littlelegend_demo.mp4",
+          caption: "Little Legend mode",
+          type: "video",
+        },
+        {
+          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/tftdle_traits_demo.mp4",
+          caption: "Trait mode",
+          type: "video",
+        },
+        {
+          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/tftdle_misc_demo.mp4",
+          caption: "Misc: Patch notes, how to play, etc.",
+          type: "video",
+        },
+      ],
+      technical:
+        "TFTdle uses a React + TypeScript frontend and a Spring Boot backend backed by PostgreSQL. The game data is scraped automatically each patch using Python + BeautifulSoup, then processed and stored. A scheduled backend job rotates the champion daily and clears previous guesses. The service is containerized with Docker and deployed on AWS, handling 100+ daily players.",
+      learnings:
+        "I learned how to architect a game system that updates itself without manual involvement. Working with daily resets, scraping, and persistence taught me the value of reliability in backend systems. I also gained experience designing UI that feels simple even when the logic behind guess evaluation is complex.",
+      results:
+        "Successfully launched and maintained a production application serving 100+ daily users. Built an automated data pipeline that has handled multiple TFT patch updates without manual intervention, demonstrating the reliability of the scraping and reset system.\n\nThe project runs continuously on AWS with minimal maintenance required, validating the architecture decisions around automation and deployment. Positive reception in the TFT community with users regularly sharing their daily scores and requesting new features.\n\nGained practical experience managing a live application with real users, including handling bug reports, monitoring performance, and deploying updates without downtime.",
     },
     {
       title:
         "Senior Design Project: Portable Urban Air Filtration System (PUFS)",
-      href: "/projects/pufs",
       dates: "November 2023 - April 2024",
+      featured: false,
       active: true,
       description:
         "Collaborated with a team of four to build an IoT portable air filtration system to for individuals living in urban areas with high pollution, monitoring and purifying indoor air quality in real-time using integrated sensors for CO2 levels and VOCs",
       technologies: ["Raspberry PI Zero", "Python", "GUIzero", "Jira"],
       links: [],
-      image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      image: "/sacstate.svg",
+      video: "",
     },
   ],
   hackathons: [

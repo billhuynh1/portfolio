@@ -13,13 +13,16 @@ interface ProjectDetailProps {
     technologies: readonly string[];
     problem?: string;
     features?: string[];
-    screenshots?: { url: string; caption: string }[];
+    screenshots?: {
+      url: string;
+      caption: string;
+      type?: "image" | "video";
+    }[];
     technical?: string;
     learnings?: string;
     results?: string;
   };
 }
-
 export default function ProjectDetailPage({ project }: ProjectDetailProps) {
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -139,30 +142,49 @@ export default function ProjectDetailPage({ project }: ProjectDetailProps) {
         )}
 
         {/* Screenshots */}
+        {/* Screenshots */}
         {project.screenshots && project.screenshots.length > 0 && (
           <section>
-            <div className="grid gap-6 md:grid-cols-2">
-              {project.screenshots.map((screenshot, idx) => (
-                <div
-                  key={idx}
-                  className="rounded-lg overflow-hidden border shadow-sm bg-card"
-                >
-                  <img
-                    src={screenshot.url}
-                    alt={screenshot.caption}
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="p-4">
-                    <p className="text-sm text-muted-foreground">
-                      {screenshot.caption}
-                    </p>
+            <div className="grid gap-6">
+              {" "}
+              {/* Remove md:grid-cols-2 */}
+              {project.screenshots.map((screenshot, idx) => {
+                const isVideo =
+                  screenshot.type === "video" ||
+                  screenshot.url.match(/\.(mp4|webm|mov)$/i);
+
+                return (
+                  <div
+                    key={idx}
+                    className="rounded-lg overflow-hidden border shadow-sm bg-card"
+                  >
+                    {isVideo ? (
+                      <video
+                        controls
+                        className="w-full h-96 object-cover"
+                        preload="metadata"
+                      >
+                        <source src={screenshot.url} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      <img
+                        src={screenshot.url}
+                        alt={screenshot.caption}
+                        className="w-full h-96 object-cover"
+                      />
+                    )}
+                    <div className="p-4">
+                      <p className="text-sm text-muted-foreground">
+                        {screenshot.caption}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
         )}
-
         {/* Technical Implementation */}
         {project.technical && (
           <section className="space-y-3">

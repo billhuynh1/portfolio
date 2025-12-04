@@ -6,10 +6,11 @@ import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
-import Link from "next/link";
 import Markdown from "react-markdown";
 
 const BLUR_FADE_DELAY = 0.04;
+const featuredProjects = DATA.projects.filter((p) => p.featured);
+const otherProjects = DATA.projects.filter((p) => !p.featured);
 
 export default function Page() {
   return (
@@ -130,14 +131,43 @@ export default function Page() {
               </div>
             </div>
           </BlurFade>
+          <div>
+            <h3 className="text-xl font-bold">Featured Projects</h3>
+            <p className="text-muted-foreground text-base">
+              Click any project to view the full case study with demos and
+              technical details
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project, id) => (
+            {featuredProjects.map((project, id) => (
               <BlurFade
                 key={project.title}
                 delay={BLUR_FADE_DELAY * 12 + id * 0.05}
               >
                 <ProjectCard
                   href={project.href}
+                  key={project.title}
+                  title={project.title}
+                  description={project.description}
+                  dates={project.dates}
+                  tags={project.technologies}
+                  image={project.image}
+                  video={project.video}
+                  links={project.links}
+                />
+              </BlurFade>
+            ))}
+          </div>
+          <h3 className="text-xl font-bold">Other Projects</h3>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+            {otherProjects.map((project, id) => (
+              <BlurFade
+                key={project.title}
+                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+              >
+                <ProjectCard
+                  href="#projects"
                   key={project.title}
                   title={project.title}
                   description={project.description}
