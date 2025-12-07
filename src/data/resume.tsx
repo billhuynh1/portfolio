@@ -10,23 +10,24 @@ export const DATA = {
   description:
     "Full Stack Software Engineer. I love building things and have a passion for learning.",
   summary:
-    "I build and ship full-stack applications. My most notable projects include TFTdle, a daily Teamfight Tactics guessing game with 100+ daily users, and Yaps, a gamified AI-powered learning platform. I have conducted NSF-funded research in wireless sensor networks (winning Best Paper at an IEEE conference), attended CalHacks, and deploy production systems using TypeScript, Next.js, React, Supabase, Docker, and AWS.",
-  avatarUrl: "/me.png",
+    "I love building products end-to-end from idea to deployment. I created TFTdle, a daily Tactician-guessing game played by 100+ users, and Yaps, an AI-powered study platform. I’ve also worked on NSF-funded wireless sensor research, where I won Best Paper at IEEE PICOM.",
+  avatarUrl: "/me.jpg",
   skills: [
     "React",
     "Next.js",
     "Typescript",
     "Node.js",
+    "TailwindCSS",
     "Python",
     "Postgres",
-    "AWS",
+    "AWS (EC2, Lambda, S3, API Gateway, CloudFront)",
     "Docker",
     "Spring Boot",
     "Java",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    // { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
     email: "billhuynh012@gmail.com",
@@ -48,10 +49,10 @@ export const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:billhuynh012@gmail.com",
         icon: Icons.email,
 
-        navbar: false,
+        navbar: true,
       },
     },
   },
@@ -67,17 +68,26 @@ export const DATA = {
       start: "May 2023",
       end: "August 2023",
       description: (
-        <>
-          Awarded <strong>Best Paper</strong> at{" "}
-          <strong>IEEE PICOM 2025</strong> for research in wireless sensor
-          network optimization. Improved network coverage efficiency by 40%
-          through an optimized algorithm combining geometric and computational
-          methods. Evaluated AI approaches including genetic algorithms, binary
-          ant colony optimization, and MARL via extensive performance testing.
-          Collaborated with faculty and peers on 1,000+ simulations and
-          participated in a cross-functional team, delivering weekly code
-          reviews and algorithm deep dives to refine methodologies.
-        </>
+        <ul className="list-disc ml-5 space-y-1">
+          <li>
+            Awarded <strong>Best Paper</strong> at{" "}
+            <strong>IEEE PICOM 2025</strong> for research in wireless sensor
+            network optimization.
+          </li>
+          <li>
+            Improved network coverage efficiency by 40% through an optimized
+            algorithm combining geometric and computational methods.
+          </li>
+          <li>
+            Evaluated AI approaches including genetic algorithms, binary ant
+            colony optimization, and MARL through extensive performance testing.
+          </li>
+          <li>
+            Collaborated with faculty and peers on 1,000+ simulations and
+            participated in a cross-functional research team, contributing
+            weekly code reviews and algorithm deep dives.
+          </li>
+        </ul>
       ),
     },
   ],
@@ -119,8 +129,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video:
-        "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/yaps_upload_demo.mp4",
+      video: "/portfolio_demos/yaps_upload_demo.mp4",
       // Detail page fields
       tagline:
         "Transforms uploaded lectures/educational media into podcasts with flashcards, using spaced repetition for efficient learning. Gamified review keeps users engaged while reinforcing key concepts.",
@@ -142,19 +151,19 @@ export const DATA = {
       ],
       screenshots: [
         {
-          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/yaps_upload_demo.mp4",
+          url: "/portfolio_demos/yaps_upload_demo.mp4",
           caption:
             "Upload a lecture and Yaps automatically converts it into a clean podcast with chapter-aligned flashcards and AI summaries.",
           type: "video",
         },
         {
-          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/yaps_review_demo.mp4",
+          url: "/portfolio_demos/yaps_demo.mp4",
           caption:
-            "Listen chapter by chapter and review flashcards generated specifically for the section you're learning. No more rewatching hour long videos.",
+            "Listen with TTS audio, audio sync with lyrics, and seek by clicking on segments!",
           type: "video",
         },
         {
-          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/yaps_review_demo.mp4",
+          url: "/portfolio_demos/yaps_review_demo.mp4",
           caption: "Review flashcards from the chapter you just listened to!",
           type: "video",
         },
@@ -198,8 +207,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video:
-        "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/tftdle_classic_demo.mp4",
+      video: "/portfolio_demos/tftdle_classic_demo.mp4",
 
       // Detail page fields
       tagline:
@@ -224,17 +232,17 @@ export const DATA = {
       ],
       screenshots: [
         {
-          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/tftdle_classic_demo.mp4",
+          url: "/portfolio_demos/tftdle_classic_demo.mp4",
           caption: "Classic mode",
           type: "video",
         },
         {
-          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/tftdle_finisher_demo.mp4",
+          url: "/portfolio_demos/tftdle_finisher_demo.mp4",
           caption: "Finisher mode",
           type: "video",
         },
         {
-          url: "https://pub-9bf0a7287bec472591e68aaa2f5b0779.r2.dev/portfolio_demos/tft_littlelegend_demo.mp4",
+          url: "/portfolio_demos/tft_littlelegend_demo.mp4",
           caption: "Little Legend mode",
           type: "video",
         },
@@ -269,6 +277,18 @@ export const DATA = {
       image: "/sacstate.svg",
       video: "",
     },
+    {
+      title: "Olympic Medal Prediction using Machine Learning",
+      dates: "July 2022 - August 2022",
+      featured: false,
+      active: true,
+      description:
+        "Built a machine learning model to predict the number of medals countries will win in the next Olympics. Cleaned and preprocessed historical Olympic data, engineered relevant features, and trained regression models to forecast medal counts based on factors like GDP, population, and past performance.",
+      technologies: ["Python", "Pandas", "Scikit-Learn", "Matplotlib"],
+      links: [],
+      image: "/machinelearning.png",
+      video: "",
+    },
   ],
   hackathons: [
     {
@@ -277,8 +297,7 @@ export const DATA = {
       location: "San Francisco, CA",
       description:
         "Developed a mobile app that maps your past activities, provides one-tap mood tracking, and uses AI to answer questions about your experiences and habits.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-western.png",
+      image: "/calhacks.png",
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
       links: [],
     },
