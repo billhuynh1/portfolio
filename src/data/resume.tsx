@@ -159,7 +159,7 @@ export const DATA = {
         {
           url: "/portfolio_demos/yaps_demo.mp4",
           caption:
-            "Listen with TTS audio, audio sync with lyrics, and seek by clicking on segments!",
+            "Listen with TTS audio, lyric syncing, and seek by clicking on segments!",
           type: "video",
         },
         {
