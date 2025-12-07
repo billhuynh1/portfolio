@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = DATA.projects.find(
-    (p) => p.href === `/projects/${params.slug}`
+    (p) => p.href === `/projects/${params.slug}` && p.featured
   );
 
   if (!project) {

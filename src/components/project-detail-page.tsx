@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 interface ProjectDetailProps {
   project: {
@@ -12,17 +13,23 @@ interface ProjectDetailProps {
     image?: string;
     technologies: readonly string[];
     problem?: string;
-    features?: string[];
-    screenshots?: {
-      url: string;
-      caption: string;
-      type?: "image" | "video";
+    features?: readonly string[];
+    screenshots?: readonly {
+      readonly url: string;
+      readonly caption: string;
+      readonly type?: "image" | "video";
     }[];
     technical?: string;
     learnings?: string;
     results?: string;
+    href?: string;
+    description?: string;
+    featured?: boolean;
+    active?: boolean;
+    links?: readonly any[];
   };
 }
+
 export default function ProjectDetailPage({ project }: ProjectDetailProps) {
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -101,7 +108,7 @@ export default function ProjectDetailPage({ project }: ProjectDetailProps) {
                   Your browser does not support the video tag.
                 </video>
               ) : project.image ? (
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
                   className="w-full object-cover"
@@ -168,7 +175,7 @@ export default function ProjectDetailPage({ project }: ProjectDetailProps) {
                         Your browser does not support the video tag.
                       </video>
                     ) : (
-                      <img
+                      <Image
                         src={screenshot.url}
                         alt={screenshot.caption}
                         className="w-full h-96 object-cover"
