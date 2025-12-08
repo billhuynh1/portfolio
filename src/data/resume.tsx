@@ -271,7 +271,8 @@ export const DATA = {
       dates: "November 2023 - April 2024",
       featured: false,
       active: true,
-      description: "...",
+      description:
+        "Collaborated with a team of 4 to build a portable air filtration system to improve air quality in urban environments. Built a prototype for our Senior Design showcase.",
       technologies: ["Raspberry PI Zero", "Python", "GUIzero", "Jira"],
       links: [],
       image: "/sacstate.svg",
