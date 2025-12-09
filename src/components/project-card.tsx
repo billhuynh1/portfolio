@@ -25,6 +25,7 @@ interface Props {
     type: string;
     href: string;
   }[];
+  featured?: boolean;
   className?: string;
 }
 
@@ -38,6 +39,7 @@ export function ProjectCard({
   image,
   video,
   links,
+  featured,
   className,
 }: Props) {
   return (
@@ -46,30 +48,55 @@ export function ProjectCard({
         "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
       }
     >
-      <Link
-        href={href || "#"}
-        className={cn("block cursor-pointer", className)}
-      >
-        {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
-          />
-        )}
-        {image && (
-          <Image
-            src={image}
-            alt={title}
-            width={500}
-            height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top"
-          />
-        )}
-      </Link>
+      {featured ? (
+        <Link
+          href={href || "#"}
+          className={cn("block cursor-pointer", className)}
+        >
+          {video && (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
+            />
+          )}
+          {image && (
+            <Image
+              src={image}
+              alt={title}
+              width={500}
+              height={300}
+              className="h-40 w-full overflow-hidden object-cover object-top"
+            />
+          )}
+        </Link>
+      ) : (
+        <div className={cn("block cursor-default", className)}>
+          {video && (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
+            />
+          )}
+          {image && (
+            <Image
+              src={image}
+              alt={title}
+              width={500}
+              height={300}
+              className="h-40 w-full overflow-hidden object-cover object-top"
+            />
+          )}
+        </div>
+      )}
+
       <CardHeader className="px-2">
         <div className="space-y-1">
           <CardTitle className="mt-1 text-base">{title}</CardTitle>

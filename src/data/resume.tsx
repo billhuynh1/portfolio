@@ -182,7 +182,7 @@ export const DATA = {
       featured: true,
       active: true,
       description:
-        "A daily Teamfight Tactics guessing game where users test their knowledge and track guesses. Features an automated pipeline that scrapes data for each patch and resets the backend daily, supporting 100+ daily active users.",
+        "A daily Riot Games Teamfight Tactics guessing game where users test their knowledge and track guesses. Features an automated pipeline that scrapes data for each patch and resets the backend daily, supporting 100+ daily active users.",
       technologies: [
         "React",
         "Typescript",
