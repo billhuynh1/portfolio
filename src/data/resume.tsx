@@ -4,7 +4,7 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 export const DATA = {
   name: "Bill Huynh",
   initials: "BH",
-  url: "https://dillion.io",
+  url: "https://bill-huynh.com",
   location: "Milpitas, CA",
   locationLink: "https://www.google.com/maps/place/milpitas",
   description:
@@ -18,6 +18,7 @@ export const DATA = {
     "Typescript",
     "Node.js",
     "TailwindCSS",
+    "Express.js",
     "Drizzle ORM",
     "Supabase",
     "OpenAI API",
@@ -181,7 +182,7 @@ export const DATA = {
     {
       title: "TFTdle",
       href: "/projects/tftdle",
-      dates: "August 2024 - October 2024",
+      dates: "June 2024 - April 2025",
       featured: true,
       active: true,
       description:
