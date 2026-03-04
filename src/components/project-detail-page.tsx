@@ -242,9 +242,9 @@ export default function ProjectDetailPage({ project }: ProjectDetailProps) {
             <section>
               <div className="rounded-lg bg-muted p-6 space-y-2">
                 <h2 className="text-2xl font-bold">Results</h2>
-                <p className="text-base text-muted-foreground">
+                <div className="text-base text-muted-foreground whitespace-pre-line">
                   {project.results}
-                </p>
+                </div>
               </div>
             </section>
           </BlurFade>

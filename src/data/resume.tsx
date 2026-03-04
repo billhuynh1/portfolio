@@ -187,23 +187,8 @@ export const DATA = {
         "Built with Next.js, Supabase, and Drizzle ORM. Implemented an end-to-end processing pipeline using ffmpeg for media compression, Whisper for transcription, and GPT for summarization + flashcard creation. Generates embeddings to map chapters to flashcards using cosine similarity. Storage + CDN optimization for hosting long video/audio. Designed for mobile-first UI with responsive layout.",
       learnings:
         "This project taught me the critical importance of architectural decisions early on. My initial synchronous processing pipeline worked fine for short videos but hit hard limits with 60+ minute content, causing request timeouts and poor user experience. Migrating to an event-driven architecture with Inngest was a pivotal moment because it taught me that async workflows aren't just nice to have for long-running tasks, they're essential. Decoupling the upload, transcription, summarization, and TTS steps into separate functions made the system dramatically more resilient and scalable.\n\nCost optimization became another key lesson when working with AI APIs. My initial implementation sent every file directly to OpenAI for transcription and used inefficient chunking for summarization, which became expensive quickly. Implementing semantic chunking (grouping content by meaning rather than arbitrary size) and prompt tuning reduced LLM costs by 45%. I learned that small changes in how you structure prompts being specific about output format, reducing token waste have massive cost impacts at scale.\n\nVector embeddings and semantic search were new concepts for me. Building the flashcard system taught me that cosine similarity thresholds aren't strict and you miss relevant connections, too lose and there is too much unnecessary flashcards that get mapped to the chapters.\n\nIf I were to rebuild this from scratch, I'd design for async processing from the beginning. I'd also implement more robust logging and monitoring to each Inngest function to track failure rates, processing times, and bottlenecks. The black box nature of long-running workflows makes debugging challenging without proper instrumentation. Finally, I'd place more emphasis on observability and idempotency, ensuring each step in the pipeline can be safely retried, inspected, and optimized without failures.",
-      results: (
-        <ul className="list-disc ml-5 space-y-1">
-          <li>
-            Transforms full lectures into focused study material in minutes with
-            chapters, flashcards, summaries, and TTS audio.
-          </li>
-          <li>
-            Generates chapter-aligned flashcards using semantic embeddings to
-            match review content to the portion of the podcast being listened
-            to.
-          </li>
-          <li>
-            Provides an efficient, podcast-style study workflow that turns raw
-            uploads into structured, reviewable learning experiences.
-          </li>
-        </ul>
-      ),
+      results:
+        "Transforms full lectures into focused study material in minutes with chapters, flashcards, summaries, and TTS audio.\n\nGenerates chapter-aligned flashcards using semantic embeddings to match review content to the portion of the podcast being listened to.\n\nProvides an efficient, podcast-style study workflow that turns raw uploads into structured, reviewable learning experiences.",
     },
     {
       title: "TFTdle",
