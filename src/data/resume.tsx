@@ -20,6 +20,9 @@ export const DATA = {
     "TailwindCSS",
     "Express.js",
     "Drizzle ORM",
+    "Inngest",
+    "ffmpeg",
+    "Fly.io",
     "Supabase",
     "OpenAI API",
     "Python",
@@ -113,19 +116,27 @@ export const DATA = {
       featured: true,
       active: true,
       description:
-        "Transforms uploaded lectures/educational media into podcasts with flashcards, using spaced repetition for efficient learning. Gamified review keeps users engaged while reinforcing key concepts.",
+        "Yaps turns uploaded MP3/MP4 lectures into personalized, AI-narrated podcast lessons (with summaries, chapters, and flashcards) so users can study in a listen-first workflow.",
       technologies: [
         "Next.js",
         "Typescript",
         "PostgreSQL",
-        "Drizzle",
+        "Express.js",
         "TailwindCSS",
         "Stripe",
         "Shadcn UI",
         "AWS",
         "OpenAI",
+        "ffmpeg",
+        "Inngest",
+        "Fly.io",
       ],
       links: [
+        {
+          type: "Website",
+          href: "https://yapz.vercel.app",
+          icon: <Icons.globe className="size-3" />,
+        },
         {
           type: "Source",
           href: "https://github.com/billhuynh1/Yaps",
@@ -133,7 +144,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video: "/portfolio_demos/yaps_upload_demo.mp4",
+      video: "/portfolio_demos/yaps_demo.mp4",
       tagline:
         "Transforms uploaded lectures/educational media into podcasts with flashcards, using spaced repetition for efficient learning. Gamified review keeps users engaged while reinforcing key concepts.",
       demoUrl: "",
@@ -185,7 +196,7 @@ export const DATA = {
       featured: true,
       active: true,
       description:
-        "A daily Riot Games Teamfight Tactics guessing game where users test their knowledge and track guesses. Features an automated pipeline that scrapes data for each patch and resets the backend daily, supporting 100+ daily active users.",
+        "A daily Riot Games Teamfight Tactics guessing game where users test their knowledge and track guesses. Resets the backend daily, supporting 100+ daily active users. Closed down due to costs",
       technologies: [
         "React",
         "Typescript",
@@ -198,11 +209,6 @@ export const DATA = {
         "BeautifulSoup",
       ],
       links: [
-        {
-          type: "Website",
-          href: "https://tft-dle.com",
-          icon: <Icons.globe className="size-3" />,
-        },
         {
           type: "Source",
           href: "https://github.com/billhuynh1/TFTdle",
