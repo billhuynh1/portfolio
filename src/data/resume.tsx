@@ -147,16 +147,17 @@ export const DATA = {
       video: "/portfolio_demos/yaps_demo.mp4",
       tagline:
         "Transforms uploaded lectures/educational media into podcasts with flashcards, using spaced repetition for efficient learning. Gamified review keeps users engaged while reinforcing key concepts.",
-      demoUrl: "",
+      demoUrl: "https://yapz.vercel.app",
       githubUrl: "https://github.com/billhuynh1/Yaps",
       problem:
         "Students spend hours rewatching long lectures to study with only a small portion of the content actually matters. Traditional note-taking is slow, transcripts are hard to digest, and reviewing entire videos for one concept becomes frustrating. I wanted to solve that by turning dense lectures into something fast, memorable, and easy to revisit, like a podcast.\n\n Instead of generating generic flashcards, Yaps embeds both the transcript chapters and flashcard text into vector space and ranks similarity between them, allowing students to review cards that directly relate to the part of the lecture they're hearing.",
       features: [
-        "Upload Zoom transcripts, MP4, or MP3 files",
+        "Upload MP4, or MP3 files",
         "Automatic audio/video compression for faster processing",
-        "Built-in transcription when a transcript is not provided",
-        "AI-generated summaries for quick lecture review",
+        "Personalized AI-generated summaries for quick lecture review",
         "Flashcard creation for spaced-repetition studying",
+        "Background processing with Inngest to handle long videos without timeouts",
+        "Chapter segmentation to break lectures into manageable sections",
         "AI-personalized flashcards matched to chapters using semantic embeddings",
         "Text-to-speech conversion to create listenable podcast-style summaries",
         "Dashboard to revisit past uploads, summaries, and generated flashcards",
@@ -186,8 +187,23 @@ export const DATA = {
         "Built with Next.js, Supabase, and Drizzle ORM. Implemented an end-to-end processing pipeline using ffmpeg for media compression, Whisper for transcription, and GPT for summarization + flashcard creation. Generates embeddings to map chapters to flashcards using cosine similarity. Storage + CDN optimization for hosting long video/audio. Designed for mobile-first UI with responsive layout.",
       learnings:
         "This project taught me the critical importance of architectural decisions early on. My initial synchronous processing pipeline worked fine for short videos but hit hard limits with 60+ minute content, causing request timeouts and poor user experience. Migrating to an event-driven architecture with Inngest was a pivotal moment because it taught me that async workflows aren't just nice to have for long-running tasks, they're essential. Decoupling the upload, transcription, summarization, and TTS steps into separate functions made the system dramatically more resilient and scalable.\n\nCost optimization became another key lesson when working with AI APIs. My initial implementation sent every file directly to OpenAI for transcription and used inefficient chunking for summarization, which became expensive quickly. Implementing semantic chunking (grouping content by meaning rather than arbitrary size) and prompt tuning reduced LLM costs by 45%. I learned that small changes in how you structure prompts being specific about output format, reducing token waste have massive cost impacts at scale.\n\nVector embeddings and semantic search were new concepts for me. Building the flashcard system taught me that cosine similarity thresholds aren't strict and you miss relevant connections, too lose and there is too much unnecessary flashcards that get mapped to the chapters.\n\nIf I were to rebuild this from scratch, I'd design for async processing from the beginning. I'd also implement more robust logging and monitoring to each Inngest function to track failure rates, processing times, and bottlenecks. The black box nature of long-running workflows makes debugging challenging without proper instrumentation. Finally, I'd place more emphasis on observability and idempotency, ensuring each step in the pipeline can be safely retried, inspected, and optimized without failures.",
-      results:
-        "Yaps turns full lectures into something a student can learn from in minutes, not hours. Chapters, flashcards, summaries, and TTS audio are generated automatically, so studying feels focused instead of overwhelming. Seeing a raw upload transform into a structured podcast with flashcards matched to each chapter is the moment everything comes together, and that's the experience I built for.",
+      results: (
+        <ul className="list-disc ml-5 space-y-1">
+          <li>
+            Transforms full lectures into focused study material in minutes with
+            chapters, flashcards, summaries, and TTS audio.
+          </li>
+          <li>
+            Generates chapter-aligned flashcards using semantic embeddings to
+            match review content to the portion of the podcast being listened
+            to.
+          </li>
+          <li>
+            Provides an efficient, podcast-style study workflow that turns raw
+            uploads into structured, reviewable learning experiences.
+          </li>
+        </ul>
+      ),
     },
     {
       title: "TFTdle",
