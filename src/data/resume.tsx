@@ -66,6 +66,35 @@ export const DATA = {
 
   work: [
     {
+      company: "Independent",
+      badges: [],
+      href: "",
+      location: "Milpitas, CA",
+      title: "Full Stack Software Engineer",
+      logoUrl: "/fullstack.png",
+      start: "May 2024",
+      end: "Present",
+      description: (
+        <ul className="list-disc ml-5 space-y-1">
+          <li>
+            Built and shipped <strong>3</strong> production applications
+            end-to-end, including AI pipelines, event-driven backends, and cloud
+            infrastructure serving <strong>200,000+</strong> monthly requests.
+          </li>
+          <li>
+            Owned architecture and implementation across frontend interfaces,
+            backend APIs, storage workflows, and cloud deployment using
+            TypeScript, Next.js, Node.js, Supabase, and AWS.
+          </li>
+          <li>
+            Improved reliability and scalability through event-driven job
+            processing, retry/backoff systems, and serverless automation for
+            long-running AI and media workflows.
+          </li>
+        </ul>
+      ),
+    },
+    {
       company: "Texas A&M Univerity, Kingsville",
       badges: [],
       href: "https://www.tamuk.edu/",
