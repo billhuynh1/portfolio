@@ -139,6 +139,71 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Chirp",
+      href: "/projects/chirp",
+      dates: "March 2026 - Present",
+      featured: true,
+      active: true,
+      description:
+        "Chirp is an AI review assistant for home service businesses that helps owners manage Google reviews, detect urgent customer feedback, and generate polished AI-powered responses before posting.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Drizzle ORM",
+        "TailwindCSS",
+        "Shadcn UI",
+        "OpenAI",
+        "Google Business Profile API",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/billhuynh1/chirp",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/chirp-inbox.png",
+      video: "",
+      tagline:
+        "Helps local service businesses respond to reviews faster with AI-generated drafts, sentiment analysis, and urgent feedback detection.",
+      demoUrl: "/chirp-inbox.png",
+      githubUrl: "https://github.com/billhuynh1/chirp",
+      problem:
+        "Small home service businesses depend heavily on online reviews, but many owners do not have the time to consistently monitor and respond to them. Positive reviews often go unanswered, while negative reviews can sit too long without a thoughtful response, hurting trust with future customers. I wanted to build a tool that reduces that friction by helping businesses stay on top of customer feedback and respond quickly with professional, context-aware drafts.\n\nInstead of forcing owners to manually read every review and come up with a reply from scratch, Chirp classifies incoming reviews by sentiment, urgency, and tags, then generates AI-assisted responses that owners can approve, edit, or reject before posting.",
+      features: [
+        "Fetches Google Business Profile reviews into a unified dashboard",
+        "Classifies reviews by sentiment, urgency, and business relevant tags",
+        "Highlights negative or urgent reviews that need fast attention",
+        "Generates AI-powered draft replies tailored to each review",
+        "Lets owners approve, edit, reject, or post responses",
+        "Helps businesses maintain a faster and more consistent review workflow",
+        "Centralized dashboard for monitoring customer feedback",
+        "Structured review metadata to make trends easier to spot over time",
+      ],
+      screenshots: [
+        {
+          url: "/portfolio_demos/chirp_dashboard.png",
+          caption:
+            "Review dashboard showing incoming customer reviews, sentiment labels, and AI-generated response drafts.",
+          type: "image",
+        },
+        {
+          url: "/portfolio_demos/chirp_review_detail.png",
+          caption:
+            "Business owners can inspect a review, see urgency signals, and edit the AI draft before posting.",
+          type: "image",
+        },
+      ],
+      technical:
+        "Built with Next.js, TypeScript, PostgreSQL, and Drizzle ORM. Integrated Google Business Profile review data into an internal workflow that classifies reviews using AI and generates response drafts through OpenAI. Designed the system so business owners stay in control of the final message by reviewing, editing, or rejecting generated replies before posting. Focused on creating a clean dashboard experience that surfaces the most important reviews first.",
+      learnings:
+        "This project taught me how product value often comes from workflow design, not just model output. Generating a response draft is useful, but the real challenge is making sure the right reviews are surfaced at the right time and that the business owner can act on them quickly. That pushed me to think more carefully about urgency classification, review tagging, and how the UI should prioritize information.\n\nI also learned more about designing AI features for trust. Business owners should not feel like they are handing over their voice to an LLM, so I focused on keeping the human in the loop. Instead of fully automating posting, Chirp emphasizes approval and editing, which makes the product feel more reliable and practical for real businesses.\n\nAnother key lesson was around permissions and external API integration. Working with Google review data and OpenAI together made me think more carefully about backend boundaries, secret management, and how to keep integrations secure while still making the app feel responsive.\n\nIf I continue building Chirp, I would expand observability around classification quality, track which AI drafts get edited most often, and use that feedback to improve prompting and tagging accuracy over time.",
+      results:
+        "Transforms raw customer reviews into an actionable workflow by helping business owners quickly identify which feedback needs attention.\n\nGenerates professional response drafts that reduce the time required to reply while keeping the owner in control of the final message.\n\nCreates a more consistent review-management process for local businesses, helping them protect reputation and engage customers faster.",
+    },
+    {
       title: "Yaps",
       href: "/projects/yaps",
       dates: "May 2025 - Present",
