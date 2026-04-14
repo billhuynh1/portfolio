@@ -154,21 +154,25 @@ export const DATA = {
         "TailwindCSS",
         "Shadcn UI",
         "OpenAI",
-        "Google Business Profile API",
         "Vercel",
       ],
       links: [
+        {
+          type: "Website",
+          href: "https://chirp-bdh.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
         {
           type: "Source",
           href: "https://github.com/billhuynh1/chirp",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/chirp-inbox.png",
-      video: "",
+      image: "",
+      video: "/portfolio_demos/chirps-demo.mp4",
       tagline:
         "Helps local service businesses respond to reviews faster with AI-generated drafts, sentiment analysis, and urgent feedback detection.",
-      demoUrl: "/chirp-inbox.png",
+      demoUrl: "/chirps-demo.mp4",
       githubUrl: "https://github.com/billhuynh1/chirp",
       problem:
         "Small home service businesses depend heavily on online reviews, but many owners do not have the time to consistently monitor and respond to them. Positive reviews often go unanswered, while negative reviews can sit too long without a thoughtful response, hurting trust with future customers. I wanted to build a tool that reduces that friction by helping businesses stay on top of customer feedback and respond quickly with professional, context-aware drafts.\n\nInstead of forcing owners to manually read every review and come up with a reply from scratch, Chirp classifies incoming reviews by sentiment, urgency, and tags, then generates AI-assisted responses that owners can approve, edit, or reject before posting.",
@@ -184,15 +188,21 @@ export const DATA = {
       ],
       screenshots: [
         {
-          url: "/portfolio_demos/chirp_dashboard.png",
+          url: "/portfolio_demos/chirps_dashboard.png",
           caption:
-            "Review dashboard showing incoming customer reviews, sentiment labels, and AI-generated response drafts.",
+            "Overview showing urgent reviews, recent activities, and analytics.",
           type: "image",
         },
         {
-          url: "/portfolio_demos/chirp_review_detail.png",
+          url: "/portfolio_demos/chirps-focus-queue.png",
           caption:
-            "Business owners can inspect a review, see urgency signals, and edit the AI draft before posting.",
+            "Focus queue shows reviews that need attention based on sentiment and urgency.",
+          type: "image",
+        },
+        {
+          url: "/portfolio_demos/chirps-list-view.png",
+          caption:
+            "List view with sentiment tags, urgency indicators, and AI draft previews.",
           type: "image",
         },
       ],

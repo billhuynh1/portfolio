@@ -131,6 +131,8 @@ export default function ProjectDetailPage({ project }: ProjectDetailProps) {
                   <Image
                     src={project.image}
                     alt={project.title}
+                    width={1600}
+                    height={900}
                     className="w-full object-cover"
                   />
                 ) : null}
@@ -200,6 +202,8 @@ export default function ProjectDetailPage({ project }: ProjectDetailProps) {
                         <Image
                           src={screenshot.url}
                           alt={screenshot.caption}
+                          width={1600}
+                          height={900}
                           className="w-full h-96 object-cover"
                         />
                       )}
