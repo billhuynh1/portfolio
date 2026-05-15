@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Full Stack Software Engineer. I love building things and have a passion for learning.",
   summary:
-    "I love building products end-to-end from idea to deployment. I created TFTdle, a daily Tactician-guessing game played by 100+ users, and Yaps, an AI-powered study platform. I’ve also worked on NSF-funded wireless sensor research, where I won Best Paper at IEEE PICOM.",
+    "I love building products end-to-end from idea to deployment. I created TFTdle, a daily Tactician-guessing game played by 100+ users, Yaps, an AI-powered study platform, and Disburse, an AI Video Repurposing Platform. I’ve also worked on NSF-funded wireless sensor research, where I won Best Paper at IEEE PICOM.",
   avatarUrl: "/me.jpg",
   skills: [
     "React",
@@ -77,19 +77,19 @@ export const DATA = {
       description: (
         <ul className="list-disc ml-5 space-y-1">
           <li>
-            Built and shipped <strong>3</strong> production applications
+            Built and shipped <strong>4</strong> production applications
             end-to-end, including AI pipelines, event-driven backends, and cloud
             infrastructure serving <strong>200,000+</strong> monthly requests.
           </li>
           <li>
-            Owned architecture and implementation across frontend interfaces,
-            backend APIs, storage workflows, and cloud deployment using
-            TypeScript, Next.js, Node.js, Supabase, and AWS.
+            Architected full-stack systems across frontend interfaces, backend
+            APIs, storage workflows, asynchronous job pipelines, and cloud
+            deployment using TypeScript, Next.js, Node.js, Supabase, and AWS.
           </li>
           <li>
-            Improved reliability and scalability through event-driven job
-            processing, retry/backoff systems, and serverless automation for
-            long-running AI and media workflows.
+            I Improved reliability for long-running AI and media-processing
+            workloads through event-driven orchestration, retry handling,
+            reconciliation, and serverless automation.
           </li>
         </ul>
       ),
